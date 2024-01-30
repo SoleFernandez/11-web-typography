@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+  <meta charset='UTF-8'/>
+  <title>Text Alignment</title>
+  <link rel='stylesheet' href='typo.css'/>
+  <!-- In a well-designed HTML document, text alignment is never an arbitrary decision. It takes into account this little bit of human physiology. Good text alignment actually makes it easier for users to read your content by giving their eyes an anchor to jump to when they move from line to line. -->
+
+<style>
+  .left {
+    text-align: left;
+  }
+  /* Left alignment
+Most of your text should be left-aligned because it gives the reader a vertical anchor to jump back to on every line. Long runs of text, in particular, should almost always be left-aligned. Short runs of text and headings have a little bit more leeway.
+Of course, if you’re working on a website that’s in a language that’s written right-to-left instead of left-to-right (like Arabic), you can go ahead and swap all this advice with the Right Alignment section below. */
+
+.center {
+  text-align: center;
+}
+/* Center alignment
+Center-aligned text doesn’t have that anchor, so it’s easier for the eye to get lost when it tries to jump to the next line. It’s best suited for short line lengths (more on that later) and for special kinds of content like poems, lyrics, and headings. 
+Generally speaking, text alignment should be consistent throughout a web page. If you’re going to center a heading, center all of your headings. */
+
+
+
+/* Right alignment
+Another consideration when choosing text alignment is the relationship it creates with the surrounding elements.
+We want to move the image’s caption to the left of the image and right-align it to make it look like it’s attached to the image: */
+figcaption {
+  display: none;
+}
+@media only screen and (min-width: 900px) {
+  figure {
+    position: relative;
+  }
+  figcaption {
+    display: block;
+
+    font-style: italic;
+    text-align: right;
+    background-color: #FFFFFF;
+
+    position: absolute;
+    left: -220px;
+    width: 200px;
+  }
+}
+/* Like centered text, right alignment should usually be reserved for these kinds of special design scenarios because its jagged left edge makes it harder for the reader to find the next line. */
+
+/* Justified text is created by subtly adjusting the space between words/letters and splitting long words with hyphens until each line is the same width. Without a high-quality hyphenation engine, justified text results in awkwardly large spaces between words. These uneven spaces make it harder for the eye to move horizontally across the text.
+Unfortunately, most browsers don’t have any kind of built-in hyphenation engine, so you’re better off avoiding justified text in HTML documents. */
+
+.justify {
+  text-align: justify;
+}
+</style>
+
+</head>
+<body>
+
+<header>
+  <nav>
+    <ul>
+      <li><a href='web-fonts.html'>Web Fonts</a></li>
+      <li><a href='history.html'>History</a></li>
+      <li><a href='indents.html'>Indents</a></li>
+      <li class='selected'>Alignment</li>
+      <li><a href='spacing.html'>Spacing</a></li>
+      <li><a href='line-length.html'>Line Length</a></li>
+    </ul>
+  </nav>
+  <div class='hero'>
+    <h1>Text Alignment</h1>
+  </div>
+</header>
+
+<div class='page'>
+
+  <section class='section section--gray left'>
+    <h2>Left Alignment</h2>
+
+    <p>Left-aligned text is the standard because it gives the reader a vertical
+    anchor to jump back to on every line. You should use it for most of your body
+    text (unless you have a very good reason not to).</p>
+
+  </section>
+
+  <section class='section section--gray center'>
+    <h2>Center Alignment</h2>
+
+    <p>Center-aligned text doesn’t have that anchor, so it’s easier for the eye
+    to get lost when it tries to jump to the next line. Reserve it for special
+    kinds of content, like poems, lyrics, and headings.</p>
+
+  </section>
+
+  <section class='section section--gray'>
+    <h2>Right Alignment</h2>
+
+    <p>Only use right-aligned text when it makes sense for the layout. For
+    example, a caption for an image:</p>
+
+    <figure>
+      <figcaption>These letters are touching. This is called a
+      ligature.</figcaption>
+      <img src='ligature.svg'/>
+    </figure>
+
+    <p>Of course, if you’re publishing content in a language that’s read
+    right-to-left, that’s another story...</p>
+
+  </section>
+
+  <section class='section section--gray justify'>
+
+    <h2>Justified Alignment</h2>
+
+    <p>Justified text requires a good hyphenation engine. Without an intelligent
+    way to split long words across lines, you get big spaces between words, which
+    makes it harder to scan the text. Most browsers don’t have good built-in
+    hyphenation engines.</p>
+    
+  </section>
+
+</div>
+
+</body>
+</html>
